@@ -52,8 +52,7 @@
             "texto": "hola",
             "archivo": null,
             "usuario_gmail": "yared.riveros@utec.edu.pe"
-        },
-        //etc.
+        }
     ]
 }
     ```
@@ -80,8 +79,7 @@
             "titulo": "otro",
             "curso": "ADA",
             "respondido": false
-        },
-        ...
+        }
     ]
 }
     ```
@@ -147,7 +145,6 @@
             "id": 2,
             "nombre": "TEO",
             "descripcion": "Se enseñan los principios de la computacion como automatas"
-        },
-        ...
+        }
     ]
     ```
