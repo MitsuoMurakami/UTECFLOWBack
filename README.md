@@ -54,8 +54,8 @@
             "usuario_gmail": "yared.riveros@utec.edu.pe"
         }
     ]
-}
-    ```
+    }
+```
 
 - Leer todas las preguntas de un usuario en específico: https://4cko1or492.execute-api.us-east-1.amazonaws.com/test/preguntas/leerPreguntas
     - POST
