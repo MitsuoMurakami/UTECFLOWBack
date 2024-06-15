@@ -53,7 +53,7 @@
             "archivo": null,
             "usuario_gmail": "yared.riveros@utec.edu.pe"
         },
-        ...
+        //etc.
     ]
 }
     ```
