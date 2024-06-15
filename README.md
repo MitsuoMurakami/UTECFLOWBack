@@ -31,9 +31,31 @@
     Recibes:
     ```json
     {
-        "statusCode": 200,
-        "body": "{\"21\": {\"id\": 21, \"titulo\": \"Test postman3\", \"curso\": \"Test2\", \"respondido\": false, \"likes\": 0, \"texto\": \"hola\", \"archivo\": null, \"usuario_gmail\": \"sofiyin@patata.edu.pe\"}, \"22\": {\"id\": 22, \"titulo\": \"otro\", \"curso\": \"ADA\", \"respondido\": false, \"likes\": 0, \"texto\": \"hola\", \"archivo\": null, \"usuario_gmail\": \"yared.riveros@utec.edu.pe\"}, \"23\": {\"id\": 23, \"titulo\": \"Tutorial de ingles plis\", \"curso\": \"Ingles\", \"respondido\": false, \"likes\": 0, \"texto\": \"Ayuda no se ingle\", \"archivo\": null, \"usuario_gmail\": \"romina.romani@utec.edu.pe\"}}"
-    }
+    "statusCode": 200,
+    "body": [
+        {
+            "id": 21,
+            "titulo": "Test postman3",
+            "curso": "Test2",
+            "respondido": false,
+            "likes": 0,
+            "texto": "hola",
+            "archivo": null,
+            "usuario_gmail": "sofiyin@patata.edu.pe"
+        },
+        {
+            "id": 22,
+            "titulo": "otro",
+            "curso": "ADA",
+            "respondido": false,
+            "likes": 0,
+            "texto": "hola",
+            "archivo": null,
+            "usuario_gmail": "yared.riveros@utec.edu.pe"
+        },
+        ...
+    ]
+}
     ```
 
 - Leer todas las preguntas de un usuario en específico: https://4cko1or492.execute-api.us-east-1.amazonaws.com/test/preguntas/leerPreguntas
@@ -47,9 +69,21 @@
     Recibes:
     ```json
     {
-        "statusCode": 200,
-        "body": "{\"22\": {\"id\": 22, \"likes\": 0, \"texto\": \"hola\", \"archivo\": null, \"usuario_gmail\": \"yared.riveros@utec.edu.pe\", \"titulo\": \"otro\", \"curso\": \"ADA\", \"respondido\": false}}"
-    }
+    "statusCode": 200,
+    "body": [
+        {
+            "id": 22,
+            "likes": 0,
+            "texto": "hola",
+            "archivo": null,
+            "usuario_gmail": "yared.riveros@utec.edu.pe",
+            "titulo": "otro",
+            "curso": "ADA",
+            "respondido": false
+        },
+        ...
+    ]
+}
     ```
 
 ### Respuestas
@@ -102,7 +136,18 @@
     Recibes:
     ```json
     {
-        "statusCode": 200,
-        "body": "{\"1\": {\"id\": 1, \"nombre\": \"ADA\", \"descripcion\": \"Se ense\ña a analizar y dise\ñar algoritmos, y mejoramiento de su complejidad\"}, \"2\": {\"id\": 2, \"nombre\": \"TEO\", \"descripcion\": \"Se ense\ñan los principios de la computacion como automatas\"}, \"3\": {\"id\": 3, \"nombre\": \"AED\", \"descripcion\": \"Se ense\ñan los tipos de estructuras de datos y su funcionamiento\"}, \"4\": {\"id\": 4, \"nombre\": \"Arquitectura\", \"descripcion\": \"Se ense\ña a dise\ñar componentes de un microprocesador\"}, \"5\": {\"id\": 5, \"nombre\": \"Progra 1\", \"descripcion\": \"Se ense\ña a programar en python\"}, \"6\": {\"id\": 6, \"nombre\": \"Progra 2\", \"descripcion\": \"Se ense\ña a programar C++\"}, \"7\": {\"id\": 7, \"nombre\": \"Intro a Computacion cuantica\", \"descripcion\": \"Se ense\ñan los principios de la cuantica\"}, \"8\": {\"id\": 8, \"nombre\": \"Ing. Software\", \"descripcion\": \"Se ense\ña como planear un proyecto, su ejecucion y su mantenimiento\"}, \"9\": {\"id\": 9, \"nombre\": \"Machine learning\", \"descripcion\": \"Se ense\ña cual es el funcionamiento y presicion de los modelos existentes\"}, \"10\": {\"id\": 10, \"nombre\": \"DBP\", \"descripcion\": \"Se ense\ña a dise\ñar y crear paginas web y aplicaciones mobiles, y subirlo a la nube para su ejecucion\"}, \"11\": {\"id\": 11, \"nombre\": \"Test\", \"descripcion\": null}, \"12\": {\"id\": 12, \"nombre\": \"Ingle\", \"descripcion\": null}}"
-    }
+    "statusCode": 200,
+    "body": [
+        {
+            "id": 1,
+            "nombre": "ADA",
+            "descripcion": "Se enseña a analizar y diseñar algoritmos, y mejoramiento de su complejidad"
+        },
+        {
+            "id": 2,
+            "nombre": "TEO",
+            "descripcion": "Se enseñan los principios de la computacion como automatas"
+        },
+        ...
+    ]
     ```
