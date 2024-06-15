@@ -79,9 +79,9 @@
             "titulo": "otro",
             "curso": "ADA",
             "respondido": false
-        }
-    ]
-}
+            }
+        ]
+    }
     ```
 
 ### Respuestas
