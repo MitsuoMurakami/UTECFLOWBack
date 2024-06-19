@@ -12,7 +12,8 @@ def lambda_handler(event, context):
 
     # Traer todas las preguntas ordenadas por número de likes
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM preguntas ORDER BY likes DESC;")
+    cursor.execute("SELECT preguntas.id, titulo, curso, respondido, likes, texto, archivo, usuario_gmail  FROM preguntas join post WHERE preguntas.id=post.id ORDER BY likes DESC;")
+    #cursor.execute("SELECT * FROM preguntas ORDER BY likes DESC;")
     preguntas = cursor.fetchall()
     conn.close()
 
