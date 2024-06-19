@@ -37,11 +37,17 @@ def lambda_handler(event, context):
 
         # Insertar en la tabla "preguntas" los datos obtenidos
         cursor.execute("""
-            INSERT INTO preguntas (likes, texto, archivo, usuario_gmail, titulo, curso, respondido) 
-            VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id;
-        """, (likes, texto, archivo, U_gmail, titulo, curso, respondido))
+            INSERT INTO post (likes, texto, archivo, fecha, usuario_gmail) 
+            VALUES (%s, %s, %s, now(), %s)
+            RETURNING id;
+        """, (likes, texto, archivo, U_gmail))
+
 
         pregunta_id = cursor.fetchone()[0]
+
+        cursor.execute("""
+            INSERT INTO preguntas (id, titulo, curso, respondido) VALUES (%s,%s,%s,%s);
+        """, (pregunta_id, titulo, curso, respondido))
         conn.commit()
 
         # Taggear la pregunta
