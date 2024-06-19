@@ -33,10 +33,20 @@ def lambda_handler(event, context):
         texto = event['texto']
         archivo = event['archivo']
         U_gmail = event['usuario_gmail']
-        pregunta_id = id_pregunta
+        post_id = id_pregunta
 
         # Insertar en la tabla "respuestas" los datos obtenidos
-        cursor.execute(f"INSERT INTO respuestas (correcto, likes, texto, archivo, usuario_gmail, pregunta_id) VALUES ({correcto}, {likes}, '{texto}', '{archivo}', '{U_gmail}', {pregunta_id});")
+        cursor.execute("""
+            INSERT INTO post (likes, texto, archivo, fecha, usuario_gmail) 
+            VALUES (%s, %s, %s, now(), %s)
+            RETURNING id;
+        """, (likes, texto, archivo, U_gmail))
+
+        respuesta_id = cursor.fetchone()[0]
+
+        cursor.execute("""
+            INSERT INTO respuestas (id, correcto, post_id) VALUES (%s,%s,%s);
+        """, (respuesta_id, correcto, post_id))
 
         conn.commit()
         

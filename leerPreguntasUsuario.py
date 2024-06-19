@@ -19,9 +19,7 @@ def lambda_handler(event, context):
     
     # Traer las preguntas del usuario ordenadas por número de likes
     cursor.execute("""
-        SELECT id, likes, texto, archivo, usuario_gmail, titulo, curso, respondido
-        FROM preguntas
-        WHERE usuario_gmail = %s
+        SELECT preguntas.id, titulo, curso, respondido, likes, texto,archivo, usuario_gmail  FROM preguntas JOIN post ON preguntas.id=post.id WHERE usuario_gmail = %s
         ORDER BY likes DESC;
     """, (usuario_gmail,))
     
@@ -45,11 +43,9 @@ def lambda_handler(event, context):
             'respondido': pregunta[7]
         })
     
-    # Generar un diccionario donde cada id de pregunta es la clave y el valor es el diccionario de la pregunta
-    preguntas_dict = {pregunta['id']: pregunta for pregunta in preguntas_json}
     
     # Devolver las preguntas en formato JSON
     return {
         'statusCode': 200,
-        'body': json.dumps(preguntas_dict)
+        'body': preguntas_json
     }
